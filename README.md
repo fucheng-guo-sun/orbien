@@ -19,10 +19,7 @@
   </a>
   <a href="https://github.com/lxien/orbien/releases/v0.28.2">
     <img src="https://img.shields.io/badge/orbien-0.28.2-blue?style=for-the-badge" alt="orbien:0.28.2"/>
-  </a>
-  <a href="https://central.sonatype.com/artifact/io.github.lxien/orbien-spring-boot-starter">
-    <img src="https://img.shields.io/maven-central/v/io.github.lxien/orbien-spring-boot-starter?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven Central"/>
-  </a>
+  </a> 
   <a href="https://somsubhra.github.io/github-release-stats/?username=lxien&repository=orbien">
     <img src="https://img.shields.io/github/downloads/lxien/orbien/total?style=for-the-badge" alt="Downloads"/>
   </a>
@@ -79,7 +76,7 @@ multiple transport channels, secure authentication, and visual operations manage
 
 ### 2.2 Server
 
-Requires Linux, Docker, and a public IP. Uses H2 database by default.
+Requires Linux, Docker, and a public IP. Uses H2 database by default
 
 ```shell
 mkdir -p /opt/orbien/data /opt/orbien/logs
@@ -137,7 +134,7 @@ docker run -d \
 
 #### 2.3.1 Binary
 
-Download from [Releases](https://github.com/lxien/orbien/releases).
+Download from [Releases](https://github.com/lxien/orbien/releases)
 
 ```shell
 Usage: orbien [-hV] [-c=<configFile>] [COMMAND]

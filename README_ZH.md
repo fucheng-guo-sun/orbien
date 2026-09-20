@@ -2,7 +2,7 @@
   <img src="doc/image/logo.png" alt="Logo" width="180" height="180" style="border-radius:24px;margin-bottom:20px;"/>
 </div>
 <p align="center" style="font-size:18px;color:#555;margin-top:-10px;margin-bottom:24px;">
-  一个高性能的内网穿透平台
+  An out-of-the-box intranet penetration platform
 </p>
 <div align="center">
   <a href="https://github.com/lxien/orbien/stargazers">
@@ -19,9 +19,6 @@
   </a>
   <a href="https://github.com/lxien/orbien/releases/v0.28.2">
     <img src="https://img.shields.io/badge/orbien-0.28.2-blue?style=for-the-badge" alt="orbien:0.28.2"/>
-  </a>
-  <a href="https://central.sonatype.com/artifact/io.github.lxien/orbien-spring-boot-starter">
-    <img src="https://img.shields.io/maven-central/v/io.github.lxien/orbien-spring-boot-starter?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven Central"/>
   </a>
   <a href="https://somsubhra.github.io/github-release-stats/?username=lxien&repository=orbien">
     <img src="https://img.shields.io/github/downloads/lxien/orbien/total?style=for-the-badge" alt="Downloads"/>
@@ -46,7 +43,7 @@
 
 ## 一、介绍
 
-**Orbien** 是一个基于 Netty的高性能**内网穿透平台**，支持多协议代理、多传输通道、安全鉴权与可视化运维
+**Orbien** 是一个基于 Netty的高性能 **内网穿透平台**，支持多协议代理、多传输通道、安全鉴权与可视化运维
 
 ### 1.1 功能特性
 
@@ -61,6 +58,7 @@
 - **配置模式**：客户端自治 + 服务端集中化配置管理，规则双向同步，满足公网和内网配置场景
 - **开发集成**：二进制客户端、Spring Boot Starter 嵌入式接入
 - **跨平台**：兼容 Windows、Linux、macOS（含 amd64 / arm64）
+
 ## 架构图
 
 ![architecture.png](doc/architecture.png)
@@ -69,7 +67,7 @@
 
 ### 2.2 服务端
 
-需要 Linux、Docker 与公网 IP，默认使用 H2数据库。
+需要 Linux、Docker 与公网 IP，默认使用 H2数据库
 
 ```shell
 mkdir -p /opt/orbien/data /opt/orbien/logs
@@ -116,17 +114,17 @@ docker run -d \
   lxien/orbien-server:0.28.2
 ```
 
-| 项目   | 说明                                                             |
-|------|----------------------------------------------------------------|
-| 面板   | `http://<host>:8020`（`admin` / `123456`）                       |
-| 数据目录 | `/opt/orbien`                                                  |
-| 端口   | 隧道 `9527` · HTTP `8080` · HTTPS `8443` · TCP/UDP 池 `9050-9060` |
+| 项目     | 说明                                                              |
+|----------|-------------------------------------------------------------------|
+| 面板     | `http://<host>:8020`（`admin` / `123456`）                        |
+| 数据目录 | `/opt/orbien`                                                     |
+| 端口     | 隧道 `9527` · HTTP `8080` · HTTPS `8443` · TCP/UDP 池 `9050-9060` |
 
 ### 2.3 客户端
 
 #### 2.3.1 二进制
 
-从 [Releases](https://github.com/lxien/orbien/releases) 下载。
+从 [Releases](https://github.com/lxien/orbien/releases) 下载
 
 ```shell
 Usage: orbien [-hV] [-c=<configFile>] [COMMAND]
@@ -146,6 +144,7 @@ Commands:
 案例：
 
 以配置文件的方式启动
+
 ```toml
 # orbien.toml
 server_addr = "YOUR_SERVER_ADDR"
@@ -161,11 +160,13 @@ local_ip = "127.0.0.1"
 local_port = 3306
 #remote_port = 9052
 ```
+
 ```shell
 orbien run orbien.toml
 ```
 
 使用命令行快速暴露
+
 ```shell
 orbien login --server YOUR_SERVER_ADDR:9527 --token YOUR_TOKEN
 orbien http 8080
@@ -199,6 +200,7 @@ docker run -d \
 #### 2.3.3 Spring Boot Starter
 
 ```xml
+
 <dependency>
     <groupId>io.github.lxien</groupId>
     <artifactId>orbien-spring-boot-starter</artifactId>
